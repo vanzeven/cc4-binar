@@ -41,7 +41,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
+        binding.btnRegister.setOnClickListener {
+            RegisterActivity.startActivity(this)
+        }
     }
 
     override fun onStart() {
