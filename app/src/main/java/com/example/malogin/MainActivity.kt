@@ -21,6 +21,17 @@ class MainActivity : AppCompatActivity() {
 
         sharedPref = PreferenceHelper(this)
 
+        var passIsVisible = 0
+        binding.btnShowPassword.setOnClickListener {
+            if(passIsVisible == 0) {
+                binding.btnShowPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                passIsVisible = 1
+            } else {
+                binding.btnShowPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+                passIsVisible = 0
+            }
+        }
+
         binding.btnLogin.setOnClickListener {
             if(binding.etUsername.text.isNotEmpty()) {
                 sharedPref.put(Constant.PREF_USERNAME, binding.etUsername.text.toString())
@@ -30,16 +41,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        var passIsVisible = 0
-        binding.btnShowPassword?.setOnClickListener {
-            if(passIsVisible == 0) {
-                binding.btnShowPassword.transformationMethod = HideReturnsTransformationMethod.getInstance()
-                passIsVisible = 1
-            } else {
-                binding.btnShowPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-                passIsVisible = 0
-            }
-        }
+
     }
 
     override fun onStart() {
