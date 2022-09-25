@@ -4,12 +4,12 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class PreferenceHelper(context: Context) {
-    private val PREF_NAME = "loginsp"
+    private val prefName = "loginsp"
     private val sharedPref : SharedPreferences
     val editor : SharedPreferences.Editor
 
     init{
-        sharedPref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        sharedPref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE)
         editor = sharedPref.edit()
     }
 
