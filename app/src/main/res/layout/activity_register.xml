@@ -13,8 +13,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/tvLogin"
+        android:text="Register"
+        android:id="@+id/tvRegister"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
         tools:ignore="HardcodedText" />
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/et_username"
         android:background="@drawable/frame"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -40,6 +40,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageView"
         tools:ignore="Autofill" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:background="@drawable/frame"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Masukkan Konfirmasi Password"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:selectAllOnFocus="true"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_username"
+        tools:ignore="Autofill,HardcodedText" />
 
     <EditText
         android:id="@+id/et_password"
@@ -61,6 +81,26 @@
         app:layout_constraintTop_toBottomOf="@+id/et_email"
         tools:ignore="Autofill" />
 
+    <EditText
+        android:id="@+id/et_konpassword"
+        android:background="@drawable/frame"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Masukkan Konfirmasi Password"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password"
+        tools:ignore="Autofill,HardcodedText" />
+
     <Button
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -70,6 +110,16 @@
         app:layout_constraintEnd_toEndOf="@id/et_password"
         app:layout_constraintBottom_toBottomOf="@+id/et_password"
         app:layout_constraintTop_toTopOf="@id/et_password" />
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/btnShowKonPassword"
+        android:background="@drawable/ic_show"
+        app:layout_constraintEnd_toEndOf="@id/et_konpassword"
+        app:layout_constraintBottom_toBottomOf="@+id/et_konpassword"
+        app:layout_constraintTop_toTopOf="@id/et_konpassword" />
 
     <Button
         android:id="@+id/btn_login"
@@ -84,20 +134,6 @@
         app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:backgroundTint="@color/white"
-        android:textColor="@color/black"
-        android:text="Belum punya akun?"
-        android:outlineProvider="none"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
-        tools:ignore="HardcodedText" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -107,7 +143,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        app:layout_constraintTop_toBottomOf="@id/tvRegister"
         app:srcCompat="@mipmap/note"
         tools:ignore="ContentDescription" />
 

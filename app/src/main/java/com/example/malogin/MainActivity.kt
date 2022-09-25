@@ -33,8 +33,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnLogin.setOnClickListener {
-            if(binding.etUsername.text.isNotEmpty()) {
-                sharedPref.put(Constant.PREF_USERNAME, binding.etUsername.text.toString())
+            if(binding.etEmail.text.isNotEmpty()) {
+                sharedPref.put(Constant.PREF_USERNAME, binding.etEmail.text.toString())
                 sharedPref.put(Constant.PREF_PASSWORD, binding.etPassword.text.toString())
                 sharedPref.put(Constant.PREF_IS_LOGIN, true)
                 moveIntent()
