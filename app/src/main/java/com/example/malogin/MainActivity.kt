@@ -3,6 +3,8 @@ package com.example.malogin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import com.example.malogin.helper.Constant
 import com.example.malogin.helper.PreferenceHelper
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,6 +24,17 @@ class MainActivity : AppCompatActivity() {
                 sharedPref.put(Constant.PREF_PASSWORD, et_password.text.toString())
                 sharedPref.put(Constant.PREF_IS_LOGIN, true)
                 moveIntent()
+            }
+        }
+
+        var passIsVisible = 0
+        btnShowPassword?.setOnClickListener {
+            if(passIsVisible == 0) {
+                et_password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                passIsVisible = 1
+            } else {
+                et_password.transformationMethod = PasswordTransformationMethod.getInstance()
+                passIsVisible = 0
             }
         }
     }
