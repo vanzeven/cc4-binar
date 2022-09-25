@@ -12,7 +12,7 @@ import com.example.malogin.database.entity.NoteEntity
 @Database(entities = [AccountEntity::class, NoteEntity::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun accountDatabaseDao() : AccountDao
-    abstract fun friendshipDatabaseDao() : NoteDao
+    abstract fun noteDatabaseDao() : NoteDao
 
     companion object {
         private const val DB_NAME = "note.db"

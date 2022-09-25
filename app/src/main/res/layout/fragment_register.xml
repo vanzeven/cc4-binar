@@ -105,7 +105,6 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="10dp"
-        android:id="@+id/btnShowPassword"
         android:background="@drawable/ic_show"
         app:layout_constraintEnd_toEndOf="@id/et_password"
         app:layout_constraintBottom_toBottomOf="@+id/et_password"
@@ -115,15 +114,14 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginEnd="10dp"
-        android:id="@+id/btnShowKonPassword"
         android:background="@drawable/ic_show"
         app:layout_constraintEnd_toEndOf="@id/et_konpassword"
         app:layout_constraintBottom_toBottomOf="@+id/et_konpassword"
         app:layout_constraintTop_toTopOf="@id/et_konpassword" />
 
     <Button
-        android:id="@+id/btn_register"
         android:layout_width="match_parent"
+        android:id="@+id/btn_register"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:layout_marginBottom="150dp"
