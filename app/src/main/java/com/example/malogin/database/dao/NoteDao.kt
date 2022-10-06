@@ -5,7 +5,7 @@ import com.example.malogin.database.entity.NoteEntity
 
 @Dao
 interface NoteDao {
-    @Query("select * from account")
+    @Query("select * from note")
     suspend fun getAllNote(): List<NoteEntity>
 
     @Insert

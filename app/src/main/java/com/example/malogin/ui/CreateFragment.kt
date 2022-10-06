@@ -1,7 +1,6 @@
 package com.example.malogin.ui
 
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Note
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,8 +32,6 @@ class CreateFragment : Fragment() {
         val dataSource = AppDatabase.getInstance(application).noteDatabaseDao()
         val viewModelFactory = CreateViewModelFactory(dataSource, application)
         createViewModel = ViewModelProvider(this, viewModelFactory)[CreateViewModel::class.java]
-
-        createViewModel.insertNote(NoteEntity(title = "tes", note = "tNc"))
 
         binding.btnSave.setOnClickListener{ saveNote() }
     }
