@@ -51,6 +51,7 @@ class NoteFragment : Fragment() {
             override fun onDeleteMenuClicked(item: NoteEntity) {
                 adapter.deleteItem(item)
                 noteViewModel.deleteNote(item)
+                Toast.makeText(requireContext(), "Note berhasil dihapus", Toast.LENGTH_SHORT).show()
             }
 
             override fun onEditMenuClicked(item: NoteEntity) {

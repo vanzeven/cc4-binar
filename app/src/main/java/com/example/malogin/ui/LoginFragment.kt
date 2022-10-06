@@ -64,10 +64,10 @@ class LoginFragment : Fragment() {
     }
 
     private fun autoConnect(){
-        val connected = sharedPreferences.getBoolean(PreferenceKey.PREF_USER_LOGIN_KEY.first,
-            PreferenceKey.PREF_USER_LOGIN_KEY.second)
 
-        if (connected){
+        val username = sharedPreferences.getString("username_key", null)
+
+        if (username != null){
             findNavController().navigate(R.id.action_loginFragment_to_noteFragment)
         }
     }
@@ -76,8 +76,4 @@ class LoginFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-}
-
-object PreferenceKey{
-    val PREF_USER_LOGIN_KEY = Pair("PREF_LOGIN_APP_KEY", false)
 }

@@ -29,6 +29,7 @@ class NoteAdapter(private val listener: NoteItemClickListener) : RecyclerView.Ad
                 binding.tvNote.text = this.note
                 binding.tvTitle.text = this.title
                 binding.ivDelete.setOnClickListener{ listener.onDeleteMenuClicked(item) }
+                binding.ivEdit.setOnClickListener{ listener. onEditMenuClicked(item) }
             }
 
         }
