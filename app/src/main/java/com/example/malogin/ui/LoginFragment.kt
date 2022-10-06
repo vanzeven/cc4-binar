@@ -51,7 +51,7 @@ class LoginFragment : Fragment() {
         val password = binding.etPassword.text.toString()
 
         loginViewModel.getAccountByEmail(email).observe(viewLifecycleOwner){
-            if (it.email == email && it.password == password){
+            if (it != null && it.email == email && it.password == password){
                 findNavController().navigate(R.id.action_loginFragment_to_noteFragment)
                 sharedPreferences.edit {
                     this.putString("username_key", it.username)
