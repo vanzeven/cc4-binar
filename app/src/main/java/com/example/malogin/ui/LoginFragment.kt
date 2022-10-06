@@ -58,7 +58,7 @@ class LoginFragment : Fragment() {
                 }
             }
             else{
-                Toast.makeText(requireContext(), "Akun tidak ditemukan", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Akun tidak ditemukan atau password salah", Toast.LENGTH_SHORT).show()
             }
         }
     }
