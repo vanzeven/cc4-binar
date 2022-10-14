@@ -68,8 +68,12 @@ class NoteFragment : Fragment() {
             }
 
             override fun onEditMenuClicked(item: NoteEntity) {
+                sharedPreferences.edit {
+                    this.putInt("note_id", item.id)
+                }
 //                Toast.makeText(requireContext(), "To be implemented", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_noteFragment_to_editFragment)
+
             }
         })
 
