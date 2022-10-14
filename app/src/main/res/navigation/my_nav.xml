@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_noteFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_editFragment"
+            app:destination="@id/editFragment" />
     </fragment>
     <fragment
         android:id="@+id/createFragment"
@@ -44,6 +47,15 @@
         tools:layout="@layout/fragment_create" >
         <action
             android:id="@+id/action_createFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.malogin.ui.editnote.EditFragment"
+        android:label="fragment_edit"
+        tools:layout="@layout/fragment_edit" >
+        <action
+            android:id="@+id/action_editFragment_to_noteFragment"
             app:destination="@id/noteFragment" />
     </fragment>
 </navigation>

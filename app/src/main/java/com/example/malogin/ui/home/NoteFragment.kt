@@ -17,9 +17,9 @@ import com.example.malogin.R
 import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.NoteEntity
 import com.example.malogin.databinding.FragmentNoteBinding
-import com.example.malogin.ui.createnote.CreateViewModelFactory
 import com.example.malogin.ui.NoteAdapter
 import com.example.malogin.ui.NoteItemClickListener
+import com.example.malogin.ui.createnote.CreateViewModelFactory
 
 class NoteFragment : Fragment() {
     private var _binding: FragmentNoteBinding? = null
@@ -68,7 +68,8 @@ class NoteFragment : Fragment() {
             }
 
             override fun onEditMenuClicked(item: NoteEntity) {
-                Toast.makeText(requireContext(), "To be implemented", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), "To be implemented", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_noteFragment_to_editFragment)
             }
         })
 
@@ -87,7 +88,9 @@ class NoteFragment : Fragment() {
         }
 
         binding.btnAdd.setOnClickListener {findNavController().navigate(R.id.action_noteFragment_to_createFragment)}
+//        binding.btnAdd.setOnClickListener { showDialog() }
     }
+
 
     private fun showDeleteDialog(item: NoteEntity) {
         AlertDialog.Builder(requireContext())
