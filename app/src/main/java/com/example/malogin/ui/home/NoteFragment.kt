@@ -87,8 +87,11 @@ class NoteFragment : Fragment() {
             }
         }
 
-        binding.btnAdd.setOnClickListener {findNavController().navigate(R.id.action_noteFragment_to_createFragment)}
-//        binding.btnAdd.setOnClickListener { showDialog() }
+        binding.apply {
+            binding.btnAdd.setOnClickListener {
+                findNavController().navigate(R.id.action_noteFragment_to_createFragment)
+            }
+        }
     }
 
 

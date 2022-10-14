@@ -1,12 +1,10 @@
 package com.example.malogin.ui.createnote
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -14,14 +12,10 @@ import com.example.malogin.R
 import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.NoteEntity
 import com.example.malogin.databinding.FragmentCreateBinding
-import com.example.malogin.databinding.FragmentNoteBinding
 
 class CreateFragment : Fragment() {
     private var _binding: FragmentCreateBinding? = null
     private val binding get() = _binding!!
-//    private var _binding2: FragmentNoteBinding? = null
-//    private val binding2 get() = _binding2!!
-    private lateinit var sharedPreferences: SharedPreferences
 
     private lateinit var createViewModel: CreateViewModel
 
