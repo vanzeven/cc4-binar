@@ -1,21 +1,27 @@
 package com.example.malogin.ui.createnote
 
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.edit
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.malogin.R
 import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.NoteEntity
 import com.example.malogin.databinding.FragmentCreateBinding
+import com.example.malogin.databinding.FragmentNoteBinding
 
 class CreateFragment : Fragment() {
     private var _binding: FragmentCreateBinding? = null
     private val binding get() = _binding!!
+//    private var _binding2: FragmentNoteBinding? = null
+//    private val binding2 get() = _binding2!!
+    private lateinit var sharedPreferences: SharedPreferences
 
     private lateinit var createViewModel: CreateViewModel
 
@@ -39,8 +45,14 @@ class CreateFragment : Fragment() {
     private fun saveNote() {
         val title = binding.etTitle.text.toString()
         val note = binding.etNote.text.toString()
+//        var noteCount = sharedPreferences.getInt("note_count", 0)
+//        noteCount += 1
 
         createViewModel.insertNote(NoteEntity(title = title, note = note))
+//        sharedPreferences.edit {
+//            this.putInt("note_count", noteCount)
+//        }
+//        binding2.isEmpty = false
         Toast.makeText(requireContext(), "Berhasil menyimpan", Toast.LENGTH_SHORT).show()
         findNavController().navigate(R.id.action_createFragment_to_noteFragment)
     }
