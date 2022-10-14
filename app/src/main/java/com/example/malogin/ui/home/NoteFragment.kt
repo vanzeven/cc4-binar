@@ -1,4 +1,4 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.home
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -15,6 +15,9 @@ import com.example.malogin.R
 import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.NoteEntity
 import com.example.malogin.databinding.FragmentNoteBinding
+import com.example.malogin.ui.createnote.CreateViewModelFactory
+import com.example.malogin.ui.NoteAdapter
+import com.example.malogin.ui.NoteItemClickListener
 
 class NoteFragment : Fragment() {
     private var _binding: FragmentNoteBinding? = null

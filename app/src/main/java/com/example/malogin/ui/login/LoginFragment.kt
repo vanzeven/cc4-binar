@@ -1,4 +1,4 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.login
 
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences

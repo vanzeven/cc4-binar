@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.malogin.ui.LoginFragment"
+        android:name="com.example.malogin.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.malogin.ui.RegisterFragment"
+        android:name="com.example.malogin.ui.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/noteFragment"
-        android:name="com.example.malogin.ui.NoteFragment"
+        android:name="com.example.malogin.ui.home.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" >
         <action
@@ -39,7 +39,7 @@
     </fragment>
     <fragment
         android:id="@+id/createFragment"
-        android:name="com.example.malogin.ui.CreateFragment"
+        android:name="com.example.malogin.ui.createnote.CreateFragment"
         android:label="fragment_create"
         tools:layout="@layout/fragment_create" >
         <action

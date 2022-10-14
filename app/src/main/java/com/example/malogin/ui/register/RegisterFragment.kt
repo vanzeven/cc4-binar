@@ -1,4 +1,4 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.register
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +12,7 @@ import com.example.malogin.R
 import com.example.malogin.databinding.FragmentRegisterBinding
 import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.AccountEntity
+import com.example.malogin.ui.login.LoginViewModelFactory
 
 class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null

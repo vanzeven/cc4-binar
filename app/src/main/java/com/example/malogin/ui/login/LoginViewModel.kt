@@ -1,4 +1,4 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.login
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

@@ -1,9 +1,10 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.login
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.malogin.database.dao.AccountDao
+import com.example.malogin.ui.register.RegisterViewModel
 import kotlin.IllegalArgumentException
 
 class LoginViewModelFactory(

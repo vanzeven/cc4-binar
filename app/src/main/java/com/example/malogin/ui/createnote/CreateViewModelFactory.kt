@@ -1,9 +1,10 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.createnote
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.malogin.database.dao.NoteDao
+import com.example.malogin.ui.home.NoteViewModel
 
 class CreateViewModelFactory(
     private val dataSource: NoteDao,

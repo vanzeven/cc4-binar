@@ -1,4 +1,4 @@
-package com.example.malogin.ui
+package com.example.malogin.ui.createnote
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
