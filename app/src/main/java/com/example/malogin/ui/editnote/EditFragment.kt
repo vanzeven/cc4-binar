@@ -8,8 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.malogin.R
+import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.NoteEntity
 import com.example.malogin.databinding.FragmentEditBinding
 
@@ -31,10 +33,10 @@ class EditFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedPreferences = requireContext().getSharedPreferences(spLogin, Context.MODE_PRIVATE)
-//        val application = requireNotNull(this.activity).application
-//        val dataSource = AppDatabase.getInstance(application).noteDatabaseDao()
-//        val viewModelFactory = CreateViewModelFactory(dataSource, application)
-//        createViewModel = ViewModelProvider(this, viewModelFactory)[CreateViewModel::class.java]
+        val application = requireNotNull(this.activity).application
+        val dataSource = AppDatabase.getInstance(application).noteDatabaseDao()
+        val viewModelFactory = EditViewModelFactory(dataSource, application)
+        editViewModel = ViewModelProvider(this, viewModelFactory)[EditViewModel::class.java]
         val noteId = sharedPreferences.getInt("note_id", 0)
 //        binding.tvCreateNew.text = noteId.toString()
 //        binding.tvEditNote.text = noteId.toString()
@@ -49,9 +51,10 @@ class EditFragment : Fragment() {
 //        sharedPreferences.edit {
 //            this.putInt("note_count", noteCount)
 //        }
-        editViewModel.updateNote(NoteEntity(title = title, note = note))
+        val noteId = sharedPreferences.getInt("note_id", 0)
+        editViewModel.updateNote(NoteEntity(id = noteId, title = title, note = note))
         Toast.makeText(requireContext(), "Berhasil menyimpan", Toast.LENGTH_SHORT).show()
-        findNavController().navigate(R.id.action_createFragment_to_noteFragment)
+        findNavController().navigate(R.id.action_editFragment_to_noteFragment)
     }
 
     override fun onDestroyView() {
