@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -13,7 +14,7 @@ import com.example.malogin.database.AppDatabase
 import com.example.malogin.database.entity.NoteEntity
 import com.example.malogin.databinding.FragmentCreateBinding
 
-class CreateFragment : Fragment() {
+class CreateFragment : DialogFragment() {
     private var _binding: FragmentCreateBinding? = null
     private val binding get() = _binding!!
 
@@ -48,8 +49,10 @@ class CreateFragment : Fragment() {
 //        }
 //        binding2.isEmpty = false
         Toast.makeText(requireContext(), "Berhasil menyimpan", Toast.LENGTH_SHORT).show()
-        findNavController().navigate(R.id.action_createFragment_to_noteFragment)
+//        findNavController().navigate(R.id.action_noteFragment_to_createFragment)
+        findNavController().navigateUp()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
