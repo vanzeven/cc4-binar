@@ -1,3 +1,4 @@
 # cc4-binar
 
-data binding: 🗿
+revisi:
+1. menambahkan fitur update note
